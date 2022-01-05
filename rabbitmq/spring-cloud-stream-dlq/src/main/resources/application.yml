@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        lowercase-in-0:
+          group: lowercase-consumers
+      rabbit:
+        bindings:
+          lowercase-in-0:
+            consumer:
+              auto-bind-dlq: true

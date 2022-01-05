@@ -1,0 +1,1 @@
+Example of project that configures the dql with Spring Cloud Stream & RabbitMQ.
