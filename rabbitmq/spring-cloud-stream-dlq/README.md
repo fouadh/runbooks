@@ -1,1 +1,1 @@
-Example of project that configures the dql with Spring Cloud Stream & RabbitMQ.
+Example of project that configures the dlq with Spring Cloud Stream & RabbitMQ.
