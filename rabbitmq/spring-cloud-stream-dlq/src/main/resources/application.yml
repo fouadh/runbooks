@@ -1,9 +1,18 @@
 spring:
   cloud:
+    function:
+      definition: lowercase;handleError
     stream:
       bindings:
         lowercase-in-0:
           group: lowercase-consumers
+        handleError-in-0:
+          destination: DLX
+          group: lowercase-in-0.lowercase-consumers.dlq
+          consumer:
+            bind-queue: false
+            declare-exchange: false
+            queue-name-group-only: true
       rabbit:
         bindings:
           lowercase-in-0:

@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 @SpringBootApplication
@@ -16,6 +17,11 @@ public class Application {
     @Bean
     Function<String, String> lowercase() {
         return this::process;
+    }
+
+    @Bean
+    Consumer<String> handleError() {
+        return input -> System.out.println("error: " + input);
     }
 
     private String process(String input) {
