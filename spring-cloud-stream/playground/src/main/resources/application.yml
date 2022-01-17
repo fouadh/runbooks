@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    function:
+      definition: reactiveUppercase
+    stream:
+      rabbit:
+        bindings:
+          reactiveUppercase-in-0:
+            binder: kafka
+            acknowledgeMode: auto
+            autoBindDlq: true
+            prefetch: 250
+          reactiveUppercase-out-0:
+            binder: rabbit
+      bindings:
+        uppercase-in-0:
+          destination: uppercase-in-0
+          group: springboot
+          consumer:
+            concurrency: 5
