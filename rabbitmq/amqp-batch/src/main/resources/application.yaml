@@ -1,0 +1,10 @@
+spring:
+  rabbitmq:
+    listener:
+      simple:
+        consumer-batch-enabled: true
+        batch-size: 5
+        de-batching-enabled: true
+    template:
+      receive-timeout: 1s
+
